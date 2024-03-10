@@ -30,6 +30,8 @@
     <Folder Include="templates\clients\destinationsClient2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
+    <Content Include="app.yaml" />
     <Content Include="templates\clients\client1.html" />
     <Content Include="templates\clients\client2.html" />
     <Content Include="templates\clients\destinationsClient1\destination1.html" />

@@ -4,14 +4,19 @@
 from flask import Flask, render_template, request
 from google.cloud import bigquery
 from datetime import datetime
+from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 
-
+load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
+
 
 # Configura la instancia de cliente de BigQuery
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/ibust/OneDrive/Escritorio/IKER MASTER/Website/pythonWebApp/pythonWebApp/secrets/nfcbigquery-909170f97741.json"
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/ibust/OneDrive/Escritorio/IKER MASTER/Website/pythonWebApp/pythonWebApp/secrets/nfcbigquery-909170f97741.json"
+app.config['DEBUG'] = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 clientbq = bigquery.Client()
 
 # Nombre del dataset y la tabla en BigQuery
@@ -88,4 +93,4 @@ def destination(client, destination_id):
     return render_template(template_path, client=client, destination_id=destination_id)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

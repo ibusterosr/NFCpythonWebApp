@@ -1,0 +1,11 @@
+runtime: python312
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: "C:/Users/ibust/OneDrive/Escritorio/IKER MASTER/Website/pythonWebApp/pythonWebApp/secrets/nfcbigquery-909170f97741.json"
+
+handlers:
+- url: /static
+  static_dir: static
+- url: /.*
+  script: auto
