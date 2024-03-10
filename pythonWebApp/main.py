@@ -15,8 +15,8 @@ CORS(app)
 
 
 # Configura la instancia de cliente de BigQuery
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/ibust/OneDrive/Escritorio/IKER MASTER/Website/pythonWebApp/pythonWebApp/secrets/nfcbigquery-909170f97741.json"
-app.config['DEBUG'] = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/ibust/OneDrive/Escritorio/IKER MASTER/Website/pythonWebApp/pythonWebApp/secrets/nfcbigquery-909170f97741.json"
+# app.config['DEBUG'] = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 clientbq = bigquery.Client()
 
 # Nombre del dataset y la tabla en BigQuery
